@@ -1,0 +1,94 @@
+.preview {
+  background: #ffffff;
+  border: 1px solid #d9dee7;
+  border-radius: 8px;
+  box-shadow: 0 24px 80px rgba(23, 32, 51, 0.12);
+  overflow: hidden;
+}
+
+.previewHeader,
+.task {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.previewHeader {
+  border-bottom: 1px solid #e6e9ef;
+  padding: 16px 18px;
+}
+
+.previewTitle {
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.previewGrid,
+.metricRow {
+  display: grid;
+  gap: 12px;
+}
+
+.previewGrid {
+  padding: 18px;
+}
+
+.metricRow {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.metric,
+.task {
+  border: 1px solid #e5e8ee;
+  border-radius: 8px;
+}
+
+.metric {
+  background: #f7f8fa;
+  padding: 14px;
+}
+
+.metricValue,
+.metricLabel {
+  display: block;
+}
+
+.metricValue {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.metricLabel {
+  color: #657084;
+  font-size: 0.78rem;
+  margin-top: 4px;
+}
+
+.task {
+  padding: 14px;
+}
+
+.taskName {
+  font-weight: 800;
+}
+
+.taskMeta {
+  color: #657084;
+  font-size: 0.82rem;
+  margin-top: 4px;
+}
+
+.pill {
+  background: #eef2f7;
+  border-radius: 999px;
+  color: #475569;
+  font-size: 0.76rem;
+  font-weight: 800;
+  padding: 6px 10px;
+}
+
+@media (max-width: 760px) {
+  .metricRow {
+    grid-template-columns: 1fr;
+  }
+}

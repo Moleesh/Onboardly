@@ -1,0 +1,185 @@
+.shell {
+  background:
+    linear-gradient(135deg, rgba(15, 118, 110, 0.1), transparent 36%),
+    linear-gradient(180deg, #ffffff 0%, #f4f6f8 100%);
+  color: #172033;
+  min-height: 100vh;
+  padding: 28px;
+}
+
+.topbar,
+.layout {
+  margin: 0 auto;
+  max-width: 1120px;
+}
+
+.topbar,
+.status,
+.action,
+.iconBox,
+.previewHeader,
+.task {
+  align-items: center;
+  display: flex;
+}
+
+.topbar {
+  justify-content: space-between;
+  margin-bottom: 44px;
+}
+
+.brand,
+.intro,
+.actionText,
+.previewGrid {
+  display: grid;
+}
+
+.brand {
+  gap: 2px;
+}
+
+.brandName,
+.actionTitle,
+.previewTitle,
+.taskName {
+  font-weight: 800;
+}
+
+.brandName {
+  font-size: 1rem;
+}
+
+.brandMeta,
+.taskMeta,
+.metricLabel {
+  color: #657084;
+}
+
+.brandMeta {
+  font-size: 0.8rem;
+}
+
+.status {
+  background: #e8f6f3;
+  border: 1px solid #bfe7df;
+  border-radius: 999px;
+  color: #0f5f59;
+  font-size: 0.8rem;
+  font-weight: 700;
+  gap: 8px;
+  padding: 8px 12px;
+}
+
+.layout {
+  align-items: center;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
+}
+
+.intro {
+  gap: 20px;
+}
+
+.eyebrow {
+  color: #0f766e;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: clamp(2.25rem, 7vw, 4.6rem);
+  line-height: 0.98;
+  margin: 0;
+  max-width: 720px;
+}
+
+.copy {
+  color: #4b5565;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 620px;
+}
+
+.actions,
+.metricRow {
+  display: grid;
+  gap: 12px;
+}
+
+.actions {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 560px;
+}
+
+.action {
+  background: #ffffff;
+  border: 1px solid #d9dee7;
+  border-radius: 8px;
+  color: #172033;
+  gap: 12px;
+  min-height: 76px;
+  padding: 16px;
+  text-decoration: none;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.action:hover {
+  border-color: #0f766e;
+  box-shadow: 0 16px 40px rgba(23, 32, 51, 0.1);
+  transform: translateY(-2px);
+}
+
+.primary {
+  background: #172033;
+  border-color: #172033;
+  color: #ffffff;
+}
+
+.iconBox {
+  background: rgba(15, 118, 110, 0.1);
+  border-radius: 8px;
+  flex: 0 0 auto;
+  height: 40px;
+  justify-content: center;
+  width: 40px;
+}
+
+.primary .iconBox {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.actionText {
+  gap: 4px;
+}
+
+.actionMeta {
+  color: #687386;
+  font-size: 0.82rem;
+}
+
+.primary .actionMeta {
+  color: #cbd5e1;
+}
+
+@media (max-width: 760px) {
+  .shell {
+    padding: 20px;
+  }
+
+  .topbar {
+    margin-bottom: 28px;
+  }
+
+  .layout,
+  .actions {
+    grid-template-columns: 1fr;
+  }
+}

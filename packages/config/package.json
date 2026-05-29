@@ -1,0 +1,11 @@
+{
+  "name": "@onboarding/config",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./eslint": "./eslint.config.js",
+    "./prettier": "./prettier.config.js",
+    "./tsconfig/base": "./tsconfig/base.json"
+  }
+}

@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: $surface;
+  color: $ink;
+  margin: 0;
+}
