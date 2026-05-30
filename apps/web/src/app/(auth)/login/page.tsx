@@ -5,7 +5,7 @@
  * @since 1.0.0
  */
 import { LoginPanel } from "@/app/(auth)/login/_components/LoginPanel";
-import { DevQuickLogin } from "@/components/shared/DevQuickLogin";
+import { LoginRedirect } from "@/components/shared/LoginRedirect";
 import styles from "@/app/(auth)/login/_styles/LoginPage.module.scss";
 import { CheckCircle2 } from "lucide-react";
 import { en } from "@/i18n/en";
@@ -23,6 +23,7 @@ export default function LoginPage({
 
   return (
     <main className={styles.shell}>
+      <LoginRedirect />
       <section className={styles.layout}>
         <aside className={styles.aside}>
           <span className={styles.eyebrow}>{en.loginEyebrow}</span>
@@ -42,9 +43,6 @@ export default function LoginPage({
               {en.loginPointRealtime}
             </li>
           </ul>
-          <div className={styles.dev}>
-            <DevQuickLogin />
-          </div>
         </aside>
         <div className={styles.panel}>
           <LoginPanel initialRole={initialRole} />

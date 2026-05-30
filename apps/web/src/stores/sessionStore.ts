@@ -11,9 +11,10 @@ type SessionState = {
   hasHydrated: boolean;
   role?: "recruiter" | "joinee";
   token?: string;
+  userLabel?: string;
   clearSession: () => void;
   setHasHydrated: (hasHydrated: boolean) => void;
-  setSession: (role: "recruiter" | "joinee", token: string) => void;
+  setSession: (role: "recruiter" | "joinee", token: string, userLabel?: string) => void;
 };
 
 export const useSessionStore = create<SessionState>()(
@@ -21,13 +22,13 @@ export const useSessionStore = create<SessionState>()(
     (set) => ({
       hasHydrated: false,
       clearSession: (): void => {
-        set({ role: undefined, token: undefined });
+        set({ role: undefined, token: undefined, userLabel: undefined });
       },
       setHasHydrated: (hasHydrated: boolean): void => {
         set({ hasHydrated });
       },
-      setSession: (role: "recruiter" | "joinee", token: string): void => {
-        set({ role, token });
+      setSession: (role: "recruiter" | "joinee", token: string, userLabel?: string): void => {
+        set({ role, token, userLabel });
       },
     }),
     {

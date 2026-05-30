@@ -22,7 +22,8 @@ import { useSessionStore } from "@/stores/sessionStore";
 export function RecruiterForm(): JSX.Element {
   const router = useRouter();
   const setSession = useSessionStore((state) => state.setSession);
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -32,14 +33,18 @@ export function RecruiterForm(): JSX.Element {
    */
   async function submit(event: FormEvent<HTMLFormElement>): Promise<void> {
     event.preventDefault();
+    if (!username.trim() || password.length < 6) {
+      setMessage(en.loginRecruiterError);
+      return;
+    }
     setIsSubmitting(true);
     setMessage("");
     try {
-      const session = await loginRecruiter(email);
-      setSession("recruiter", session.token);
+      const session = await loginRecruiter(username.trim(), password);
+      setSession("recruiter", session.token, username.trim());
       router.push(session.redirectTo);
     } catch {
-      setMessage(en.loginEmailError);
+      setMessage(en.loginRecruiterError);
     } finally {
       setIsSubmitting(false);
     }
@@ -52,20 +57,25 @@ export function RecruiterForm(): JSX.Element {
         <p className={styles.copy}>{en.loginRecruiterCopy}</p>
       </div>
       <label className={styles.field}>
-        <span className={styles.label}>{en.loginEmailLabel}</span>
+        <span className={styles.label}>{en.loginUsernameLabel}</span>
         <input
           className={styles.input}
-          onChange={(event) => setEmail(event.target.value)}
-          placeholder="recruiter@company.com"
-          type="email"
-          value={email}
+          onChange={(event) => setUsername(event.target.value)}
+          placeholder="recruiter"
+          value={username}
         />
       </label>
-      {message ? (
-        <div className={`${styles.message} ${message === en.loginEmailError ? styles.error : ""}`}>
-          {message}
-        </div>
-      ) : null}
+      <label className={styles.field}>
+        <span className={styles.label}>{en.loginPasswordLabel}</span>
+        <input
+          className={styles.input}
+          onChange={(event) => setPassword(event.target.value)}
+          placeholder="Password"
+          type="password"
+          value={password}
+        />
+      </label>
+      {message ? <div className={`${styles.message} ${styles.error}`}>{message}</div> : null}
       <Button className={styles.button} disabled={isSubmitting} type="submit">
         <LogIn size={16} />
         {isSubmitting ? en.redirecting : en.loginRecruiterCta}

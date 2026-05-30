@@ -5,6 +5,7 @@
  * @since 1.0.0
  */
 import type { ReactNode } from "react";
+import { ThemeProvider } from "@/components/shared/ThemeProvider";
 import "@/styles/globals.scss";
 
 /**
@@ -15,7 +16,9 @@ import "@/styles/globals.scss";
 export default function RootLayout({ children }: { children: ReactNode }): JSX.Element {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

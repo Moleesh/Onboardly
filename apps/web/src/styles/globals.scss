@@ -3,13 +3,16 @@
 @tailwind utilities;
 
 @import "./variables";
+@import "./theme-tokens";
+@import "./app-shell";
+@import "./dashboard";
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  background: $surface;
-  color: $ink;
+  background: var(--surface);
+  color: var(--ink);
   margin: 0;
 }

@@ -23,12 +23,12 @@ signatures, generating PDFs, and tracking progress with an audit trail. 😊
 
 ## 🎨 What FirstDay Does
 
-| Experience | Highlights |
-| --- | --- |
-| 🧑‍💼 Recruiters | Sign in, create reusable onboarding templates, assign joinees, and review progress. |
-| 😊 Joinees | Upload required documents, review AI-assisted fields, sign, and download the completed PDF. |
+| Experience    | Highlights                                                                                         |
+| ------------- | -------------------------------------------------------------------------------------------------- |
+| 🧑‍💼 Recruiters | Sign in, create reusable onboarding templates, assign joinees, and review progress.                |
+| 😊 Joinees    | Upload required documents, review AI-assisted fields, sign, and download the completed PDF.        |
 | 🔐 Operations | Use signed storage URLs, audit logs, CSRF protection, throttling, and server-side file validation. |
-| ✨ Automation | Extract document details with Gemini and send status updates through Resend. |
+| ✨ Automation | Extract document details with Gemini and send status updates through Resend.                       |
 
 ## 🧭 Architecture
 
@@ -44,15 +44,15 @@ flowchart LR
 
 ## 🛠️ Tech Stack
 
-| Layer | Stack |
-| --- | --- |
-| Monorepo | Turborepo, pnpm workspaces |
-| Web | Next.js 14, React 18, Tailwind CSS, SCSS modules, Zustand, Jotai, TanStack Query |
-| API | NestJS 10, Fastify, Prisma, Passport, Swagger |
-| Data | Supabase Postgres, Supabase Auth, Supabase Storage |
-| Documents | Gemini extraction, `pdf-lib`, React PDF, signature canvas |
-| Quality | Vitest, Playwright, ESLint, Prettier, pnpm audit, TruffleHog, Snyk |
-| Deployment | Railway API, Vercel web app |
+| Layer      | Stack                                                                            |
+| ---------- | -------------------------------------------------------------------------------- |
+| Monorepo   | Turborepo, pnpm workspaces                                                       |
+| Web        | Next.js 14, React 18, Tailwind CSS, SCSS modules, Zustand, Jotai, TanStack Query |
+| API        | NestJS 10, Fastify, Prisma, Passport, Swagger                                    |
+| Data       | Supabase Postgres, Supabase Auth, Supabase Storage                               |
+| Documents  | Gemini extraction, `pdf-lib`, React PDF, signature canvas                        |
+| Quality    | Vitest, Playwright, ESLint, Prettier, pnpm audit, TruffleHog, Snyk               |
+| Deployment | Railway API, Vercel web app                                                      |
 
 ## 📁 Monorepo Map
 
@@ -92,10 +92,10 @@ pnpm dev
 
 Once the dev servers are running:
 
-| Service | URL |
-| --- | --- |
-| 🌈 Web app | [http://localhost:3000](http://localhost:3000) |
-| ⚡ API | [http://localhost:4000](http://localhost:4000) |
+| Service             | URL                                                      |
+| ------------------- | -------------------------------------------------------- |
+| 🌈 Web app          | [http://localhost:3000](http://localhost:3000)           |
+| ⚡ API              | [http://localhost:4000](http://localhost:4000)           |
 | 📚 Swagger API docs | [http://localhost:4000/docs](http://localhost:4000/docs) |
 
 ## 🔑 Environment Variables
@@ -103,33 +103,33 @@ Once the dev servers are running:
 Create `.env` from [`.env.example`](./.env.example), then replace the sample
 values with your own secrets. Never commit `.env`. 🔐
 
-| Name | Used By | Description |
-| --- | --- | --- |
-| `DATABASE_URL` | API | PostgreSQL connection string |
-| `GEMINI_API_KEY` | API | Gemini key for AI-assisted extraction |
-| `JOINEE_JWT_SECRET` | API | Joinee token secret, at least 32 characters |
-| `RESEND_API_KEY` | API | Resend key for notification emails |
-| `SUPABASE_JWT_SECRET` | API | Supabase JWT verification secret, at least 32 characters |
-| `SUPABASE_SERVICE_ROLE_KEY` | API | Server-only Supabase service role key |
-| `SUPABASE_URL` | API | Supabase project URL |
-| `WEB_ORIGIN` | API | Allowed web origin for CORS |
-| `NEXT_PUBLIC_API_URL` | Web | Browser-facing API URL |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Web | Browser-safe Supabase anonymous key |
-| `NEXT_PUBLIC_SUPABASE_URL` | Web | Browser-facing Supabase project URL |
+| Name                            | Used By | Description                                              |
+| ------------------------------- | ------- | -------------------------------------------------------- |
+| `DATABASE_URL`                  | API     | PostgreSQL connection string                             |
+| `GEMINI_API_KEY`                | API     | Gemini key for AI-assisted extraction                    |
+| `JOINEE_JWT_SECRET`             | API     | Joinee token secret, at least 32 characters              |
+| `RESEND_API_KEY`                | API     | Resend key for notification emails                       |
+| `SUPABASE_JWT_SECRET`           | API     | Supabase JWT verification secret, at least 32 characters |
+| `SUPABASE_SERVICE_ROLE_KEY`     | API     | Server-only Supabase service role key                    |
+| `SUPABASE_URL`                  | API     | Supabase project URL                                     |
+| `WEB_ORIGIN`                    | API     | Allowed web origin for CORS                              |
+| `NEXT_PUBLIC_API_URL`           | Web     | Browser-facing API URL                                   |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Web     | Browser-safe Supabase anonymous key                      |
+| `NEXT_PUBLIC_SUPABASE_URL`      | Web     | Browser-facing Supabase project URL                      |
 
 ## 🧪 Useful Commands
 
-| Command | Purpose |
-| --- | --- |
-| `pnpm dev` | Start every development server |
-| `pnpm build` | Build all apps and packages |
-| `pnpm lint` | Run ESLint across the monorepo |
-| `pnpm format` | Check Prettier formatting |
-| `pnpm test` | Run unit and component tests |
-| `pnpm typecheck` | Run TypeScript checks |
-| `pnpm validate:env` | Validate required environment variables |
-| `pnpm --filter @onboarding/web e2e` | Run Playwright flows |
-| `pnpm --filter @onboarding/api prisma:seed` | Seed local onboarding data |
+| Command                                     | Purpose                                 |
+| ------------------------------------------- | --------------------------------------- |
+| `pnpm dev`                                  | Start every development server          |
+| `pnpm build`                                | Build all apps and packages             |
+| `pnpm lint`                                 | Run ESLint across the monorepo          |
+| `pnpm format`                               | Check Prettier formatting               |
+| `pnpm test`                                 | Run unit and component tests            |
+| `pnpm typecheck`                            | Run TypeScript checks                   |
+| `pnpm validate:env`                         | Validate required environment variables |
+| `pnpm --filter @onboarding/web e2e`         | Run Playwright flows                    |
+| `pnpm --filter @onboarding/api prisma:seed` | Seed local onboarding data              |
 
 ## 🗄️ Data Model
 
@@ -150,23 +150,23 @@ erDiagram
 
 ## ✅ CI, Security, And Deployments
 
-| Workflow | Trigger | What It Does |
-| --- | --- | --- |
-| [CI](https://github.com/Moleesh/FirstDay/actions/workflows/ci.yml) | Pull requests and manual runs | Environment validation, linting, formatting, tests, audit, secret scan, Prisma dry run, build, and Playwright |
-| [Security](https://github.com/Moleesh/FirstDay/actions/workflows/security.yml) | Mondays at 03:00 UTC and manual runs | pnpm audit, Snyk, and TruffleHog |
-| [Deploy](https://github.com/Moleesh/FirstDay/actions/workflows/deploy.yml) | Pushes to `main` | Tests, build, Prisma migrations, Railway API deploy, and Vercel web deploy |
-| [Migrate](https://github.com/Moleesh/FirstDay/actions/workflows/migrate.yml) | Manual runs | Deploy Prisma migrations |
+| Workflow                                                                       | Trigger                              | What It Does                                                                                                  |
+| ------------------------------------------------------------------------------ | ------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
+| [CI](https://github.com/Moleesh/FirstDay/actions/workflows/ci.yml)             | Pull requests and manual runs        | Environment validation, linting, formatting, tests, audit, secret scan, Prisma dry run, build, and Playwright |
+| [Security](https://github.com/Moleesh/FirstDay/actions/workflows/security.yml) | Mondays at 03:00 UTC and manual runs | pnpm audit, Snyk, and TruffleHog                                                                              |
+| [Deploy](https://github.com/Moleesh/FirstDay/actions/workflows/deploy.yml)     | Pushes to `main`                     | Tests, build, Prisma migrations, Railway API deploy, and Vercel web deploy                                    |
+| [Migrate](https://github.com/Moleesh/FirstDay/actions/workflows/migrate.yml)   | Manual runs                          | Deploy Prisma migrations                                                                                      |
 
 ### 🌍 Live URLs
 
 The deployment workflow targets Railway and Vercel, but the public production
 URLs are not stored in this repository yet. Add them here once confirmed. 😊
 
-| Service | Production URL |
-| --- | --- |
-| 🌈 Web app | _To be added_ |
-| ⚡ API | _To be added_ |
-| 📚 Swagger API docs | _To be added_ |
+| Service             | Production URL |
+| ------------------- | -------------- |
+| 🌈 Web app          | _To be added_  |
+| ⚡ API              | _To be added_  |
+| 📚 Swagger API docs | _To be added_  |
 
 ## 🛡️ Security Notes
 

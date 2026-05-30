@@ -17,8 +17,11 @@ import { en } from "@/i18n/en";
  */
 export function DocumentBuilder(): JSX.Element {
   return (
-    <section className="grid gap-3 rounded-md border border-slate-200 bg-white p-4">
-      <h2 className="text-lg font-semibold">{en.documentBuilder}</h2>
+    <section className="app-card grid gap-3">
+      <div className="app-card__heading">
+        <span>Template studio</span>
+        <h2>{en.documentBuilder}</h2>
+      </div>
       <StepChecklist />
       <StepFormBuilder />
       <StepPDFConsolidate />

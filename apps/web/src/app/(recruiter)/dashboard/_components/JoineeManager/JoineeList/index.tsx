@@ -5,14 +5,27 @@
  * @since 1.0.0
  */
 import { JoineeStatusBadge } from "./JoineeStatusBadge";
+import type { JoineeSummary } from "@/app/(recruiter)/dashboard/_components/JoineeManager";
 
-export function JoineeList(): JSX.Element {
+export function JoineeList({ joinees }: { joinees: Array<JoineeSummary> }): JSX.Element {
   return (
     <div className="grid gap-2">
-      <div className="flex items-center justify-between rounded-md border p-3 text-sm">
-        <span>JN-2026-00042</span>
-        <JoineeStatusBadge status="PENDING" />
-      </div>
+      {joinees.map((joinee) => (
+        <div className="joinee-card" key={joinee.displayId}>
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="font-medium">{joinee.fullName}</div>
+              <div className="app-muted">{joinee.displayId}</div>
+            </div>
+            <JoineeStatusBadge status={joinee.status} />
+          </div>
+          {joinee.accessCode ? (
+            <div className="access-code">
+              Access code: <strong>{joinee.accessCode}</strong>
+            </div>
+          ) : null}
+        </div>
+      ))}
     </div>
   );
 }

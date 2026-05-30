@@ -41,7 +41,7 @@ export function JoineeForm(): JSX.Element {
     setError("");
     try {
       const session = await loginJoinee({ accessCode, displayId });
-      setSession("joinee", session.token);
+      setSession("joinee", session.token, displayId);
       router.push(session.redirectTo);
     } catch {
       setError(en.loginJoineeError);

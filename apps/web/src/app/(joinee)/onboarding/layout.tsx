@@ -5,7 +5,12 @@
  * @since 1.0.0
  */
 import type { ReactNode } from "react";
+import { RouteGuard } from "@/components/shared/RouteGuard";
 
 export default function OnboardingLayout({ children }: { children: ReactNode }): JSX.Element {
-  return <div className="min-h-screen bg-surface">{children}</div>;
+  return (
+    <RouteGuard requiredRole="joinee">
+      <div className="min-h-screen bg-surface">{children}</div>
+    </RouteGuard>
+  );
 }

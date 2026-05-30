@@ -9,17 +9,21 @@ import type { JoineeLogin } from "@onboarding/types";
 
 const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:4000").replace(/\/+$/, "");
 const DEMO_TOKEN = "demo-session-token";
+const DEV_RECRUITER_PASSWORD = "firstday";
+const DEV_RECRUITER_USERNAME = "recruiter";
 
 /**
- * Requests a recruiter sign-in session.
- * @param email - Recruiter work email.
+ * Authenticates the hard-coded development recruiter account.
+ * @param username - Recruiter username.
+ * @param password - Recruiter password.
  * @returns Session token and redirect path.
  */
 export async function loginRecruiter(
-  email: string,
+  username: string,
+  password: string,
 ): Promise<{ token: string; redirectTo: string }> {
-  if (!email.includes("@")) {
-    throw new Error("Invalid recruiter email");
+  if (username !== DEV_RECRUITER_USERNAME || password !== DEV_RECRUITER_PASSWORD) {
+    throw new Error("Invalid recruiter credentials");
   }
   return { redirectTo: "/dashboard", token: DEMO_TOKEN };
 }
