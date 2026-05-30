@@ -20,7 +20,7 @@ async function bootstrap(): Promise<void> {
   app.use(helmet());
   app.enableCors({ origin: process.env.WEB_ORIGIN, credentials: true });
   app.useGlobalPipes(new ValidationPipe({ transform: true, whitelist: true }));
-  const config = new DocumentBuilder().setTitle("Onboardly API").setVersion("1.0.0").build();
+  const config = new DocumentBuilder().setTitle("FirstDay API").setVersion("1.0.0").build();
   SwaggerModule.setup("docs", app, SwaggerModule.createDocument(app, config));
   await app.listen(Number(process.env.PORT ?? 4000), "0.0.0.0");
 }

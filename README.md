@@ -1,4 +1,4 @@
-# Onboardly
+# FirstDay
 
 [CI badge] [Deploy badge] [Coverage badge] [License badge]
 

@@ -19,9 +19,9 @@ export class EmailService {
    */
   async sendStatusChange(to: string, status: string): Promise<void> {
     await this.resend.emails.send({
-      from: "Onboardly <notifications@example.com>",
+      from: "FirstDay <notifications@example.com>",
       to,
-      subject: "Onboardly status changed",
+      subject: "FirstDay status changed",
       text: `Your onboarding status is now ${status}.`,
     });
   }

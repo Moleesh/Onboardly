@@ -5,7 +5,7 @@
  * @since 1.0.0
  */
 export const en = {
-  appName: "Onboardly",
+  appName: "FirstDay",
   homeCopy:
     "Assign document packets, track joinee progress, collect consent, and keep every submission ready for review without switching tools.",
   homeEyebrow: "Secure onboarding operations",
